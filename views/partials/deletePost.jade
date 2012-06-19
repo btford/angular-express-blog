@@ -1,0 +1,7 @@
+h2 {{post.title}}
+div {{post.text}}
+p
+  | Are you sure you want to delete this post? 
+  button(ng-click='deletePost()') Yes
+  |  - 
+  button(ng-click='home()') No thanks
