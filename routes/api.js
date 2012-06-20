@@ -20,15 +20,14 @@ var data = {
 // GET
 
 exports.posts = function (req, res) {
-  var posts = [], i, post, text;
-  for (i = 0; i < Math.min(data.posts.length, 5); i++) {
-    post = data.posts[i];
+  var posts = [];
+  data.posts.forEach(function (post, i) {
     posts.push({
       id: i,
       title: post.title,
       text: post.text.substr(0, 50) + '...'
     });
-  }
+  });
   res.json({
     posts: posts
   });
@@ -47,22 +46,28 @@ exports.post = function (req, res) {
 
 // POST
 
+exports.addPost = function (req, res) {
+  data.posts.push(req.body);
+  res.json(req.body);
+};
+
+// PUT
+
 exports.editPost = function (req, res) {
-  var id = req.body.id,
-    title = req.body.title,
-    text = req.body.text;
+  var id = req.params.id;
 
   if (id >= 0 && id < data.posts.length) {
-    data.posts[id].title = title;
-    data.posts[id].text = text;
+    data.posts[id] = req.body;
     res.json(true);
   } else {
     res.json(false);
   }
 };
 
+// DELETE
+
 exports.deletePost = function (req, res) {
-  var id = req.body.id;
+  var id = req.params.id;
 
   if (id >= 0 && id < data.posts.length) {
     data.posts.splice(id, 1);
@@ -70,9 +75,4 @@ exports.deletePost = function (req, res) {
   } else {
     res.json(false);
   }
-};
-
-exports.addPost = function (req, res) {
-  data.posts.push(req.body);
-  res.json(req.body);
 };

@@ -1,7 +1,7 @@
 h2 Write a new post
 label(for='title') Title: 
-input(ng-model='title', name='title')
+input(ng-model='form.title', name='title')
 p Body:
-textarea(ng-model='text', cols='50', rows='15')
+textarea(ng-model='form.text', cols='50', rows='15')
 p
   button(ng-click='submitPost()') Submit Post
