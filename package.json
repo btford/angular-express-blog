@@ -1,9 +1,9 @@
 {
-    "name": "application-name"
-  , "version": "0.0.1"
+    "name": "angular-express-blog"
+  , "version": "0.0.2"
   , "private": true
   , "dependencies": {
-      "express": "2.5.10"
-    , "jade": ">= 0.0.1"
+      "express": "3.3.1"
+    , "jade": ">= 0.32.0"
   }
 }
