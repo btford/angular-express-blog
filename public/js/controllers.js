@@ -48,7 +48,7 @@ function DeletePostCtrl($scope, $http, $location, $routeParams) {
     });
 
   $scope.deletePost = function () {
-    $http.delete('/api/post/' + $routeParams.id).
+    $http['delete']('/api/post/'+ $routeParams.id).
       success(function(data) {
         $location.url('/');
       });
