@@ -22,6 +22,9 @@ var data = {
 exports.posts = function (req, res) {
   var posts = [];
   data.posts.forEach(function (post, i) {
+    if (typeof post.text == "undefined") {
+      post.text = ""
+    }
     posts.push({
       id: i,
       title: post.title,
