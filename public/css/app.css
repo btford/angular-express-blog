@@ -28,3 +28,122 @@
   content: "";
   padding: 0;
 }
+
+html{
+    height: 100%;
+}
+
+body {
+  height: 100%;   
+    background-color: #4A59D8;
+}
+
+header{
+    background-color: #3b5998;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+}
+
+footer{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width:100%;
+    padding: 1rem;
+    background-color: #4A59D8;
+    text-align: center;
+}
+
+.navbar {
+    background-color:#4A59D8; 
+    margin-bottom: 35px;
+}
+
+.navbar-brand {
+    color:white; 
+    font-family:'Leckerli One', cursive;
+}
+
+.footer-text {
+    color: white;
+}
+
+.breadcrumb {
+    margin-top: 50px;
+}
+
+div.new-comment {
+    height: 5em;
+    margin-top: 12px;
+    position: relative;
+    padding: 0px;
+}
+
+#comment {
+    outline: none;
+    resize: none;
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    border: none;
+}
+
+#comment-button {
+    height: 100%;
+    position: absolute;
+    right:0px;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: white;
+}
+
+.comment-list-item {
+    padding: 6px;
+}
+
+.voting-buttons {
+    text-align: center;
+}
+
+.leckerli-font {
+    font-family: 'Leckerli One', cursive;
+    color: black;
+}
+
+.black-font {
+    color: black;
+}
+
+#landing-center-col {
+    text-align: center;
+}
+
+#landing-main-row {
+    position: relative;
+    top: 150px;
+}
+
+#landing-title {
+    font-size: 40px;
+}
+
+#landing-motto {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+div.dropdown a button.leckerli-font {
+    height: 50px;
+    width: 140px;
+}
+
+a {
+  color: #00B7FF;

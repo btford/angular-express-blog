@@ -1,3 +1,6 @@
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://ofcourseSD:cse170xd@ds047085.mlab.com:47085/ofcoursedb');
+var courseSchema = require('./schema');
 /*
  * Serve JSON to our AngularJS client
  */
@@ -33,35 +36,58 @@ exports.posts = function (req, res) {
   });
 };
 
-exports.post = function (req, res) {
-  var id = req.params.id;
+exports.posttodatabase = function (req, res) {
+  var courseId = req.params.course;
+  var mainpost = req.params.mainpost;
+  courseSchema.update({course_abbreviation : courseId}, 
+    {$push : {"posts" : {"post" : mainpost, "vote" : 0}}},
+    {safe: true, upsert: true},
+    function(err,model){
+      res.json(model);
+    });
+/*var id = req.params.id;
   if (id >= 0 && id < data.posts.length) {
     res.json({
       post: data.posts[id]
     });
   } else {
     res.json(false);
-  }
+  }*/
 };
 
 // POST
 
-exports.addPost = function (req, res) {
-  data.posts.push(req.body);
-  res.json(req.body);
+exports.displayclasses = function (req, res) {
+
+  //data.posts.push(req.body);
+    console.log("Inside node request");
+    courseSchema.find(function(err, data) {
+    var courselist = [];
+    for (var i = 0; i < data.length; i++) {
+      courselist[i] = data[i].course_abbreviation;
+    }
+
+    console.log("sending json data");
+    res.json(courselist);
+  });
+  //res.json(req.body)
 };
 
 // PUT
 
-exports.editPost = function (req, res) {
-  var id = req.params.id;
-
-  if (id >= 0 && id < data.posts.length) {
+exports.showoneclass = function (req, res) {
+  console.log("Inside node function #2");
+  var courseId = req.params.course;
+  courseSchema.findOne({course_abbreviation : courseId},function(err, data) {
+    res.json(data);
+  });
+  /*if (id >= 0 && id < data.posts.length) {
     data.posts[id] = req.body;
     res.json(true);
   } else {
     res.json(false);
-  }
+  }*/
+
 };
 
 // DELETE
