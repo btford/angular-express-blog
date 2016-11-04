@@ -1,8 +1,11 @@
 extends layout
 
 block body
-  div
-    h2 My Blog
+
+  nav.navbar.navbar-fixed-top.navbar-light
+    a.navbar-brand(href='/') Of Course
+
+  div.container
     ul
       li
         a(href='/') Home
@@ -17,3 +20,9 @@ block body
   script(src='js/controllers.js')
   script(src='js/filters.js')
   script(src='js/directives.js')
+
+  footer
+    h6.footer-text Copyright &copy 2016 Of Course 
+    h6.footer-text Coded with 
+      span.glyphicon.glyphicon-heart.footer-text
+      |  by Andy Nguyen, Justin Huynh, and Shiva Kannan

@@ -1,0 +1,23 @@
+ol.breadcrumb
+	li.breadcrumb-item 
+		a(href='/') Of-Course
+	li.breadcrumb-item 
+		a(href='/UCSD') UCSD
+	li.breadcrumb-item.active {{courseAbbreviation}}
+div.input-group
+	input.form-control(type='text', name='search', placeholder='Search classes...')
+	div.input-group-btn
+		button.btn.btn-default(type='submit')
+			i.glyphicon.glyphicon-search
+div.form-control.new-comment
+		textarea#comment(placeholder='Enter your thoughts about {{courseAbbreviation}}...' ng-model="commentText")
+		button#comment-button.btn.btn-primary.pull-right(ng-click="makePost()") Post
+div(ng-repeat='post in postList')
+	div.row
+		div.col-sm-4
+			{{post.post}}
+		div.col-sm-4
+		div.col-sm-4
+			button.btn.btn-success(type="button") Upvote
+			h6 {{post.vote}}
+			button.btn.btn-danger(type="button") Downvote

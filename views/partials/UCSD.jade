@@ -1,0 +1,12 @@
+
+ol.breadcrumb
+	li.breadcrumb-item 
+		a(href='/') Of-Course
+	li.breadcrumb-item.active UCSD
+div.input-group#search
+	input.form-control(type='text', name='search', placeholder='Search classes...')
+	div.input-group-btn
+		button.btn.btn-default(type='submit')
+			i.glyphicon.glyphicon-search
+div.list-group
+	a.list-group-item(ng-repeat='class in listofallclasses', href='/UCSD/{{class}}') {{class}}

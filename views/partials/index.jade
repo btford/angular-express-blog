@@ -1,9 +1,11 @@
-p There are {{posts.length}} posts
-div(ng-repeat='post in posts')
-  h3 {{post.title}}
-  div {{post.text}}
-  a(href='/readPost/{{post.id}}') More
-  |  - 
-  a(href='/editPost/{{post.id}}') Edit
-  |  - 
-  a(href='/deletePost/{{post.id}}') Delete
+div.row#landing-main-row
+    div.col-lg-4
+    div.col-lg-4#landing-center-col
+      h1.leckerli-font#landing-title Of Course
+      h2.leckerli-font#landing-motto More than just a rating
+      div.dropdown
+        a(href="/UCSD")
+          button.btn.btn-success.leckerli-font(type="button") UCSD 
+        a(href="/Login")
+          button.btn.btn-success.leckerli-font(type="button") Fake Login
+    div.col-lg-4
