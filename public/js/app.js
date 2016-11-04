@@ -20,9 +20,9 @@ angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives'])
         templateUrl: 'partials/editPost',
         controller: EditPostCtrl
       }).
-      when('/deletePost/:id', {
-        templateUrl: 'partials/deletePost',
-        controller: DeletePostCtrl
+      when('/Login', {
+        templateUrl: 'partials/Login',
+        controller:  DeletePostCtrl
       }).
       otherwise({
         redirectTo: '/'
