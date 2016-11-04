@@ -42,8 +42,8 @@ exports.posttodatabase = function (req, res) {
   courseSchema.update({course_abbreviation : courseId}, 
     {$push : {"posts" : {"post" : mainpost, "vote" : 0}}},
     {safe: true, upsert: true},
-    function(err,model){
-      res.json(model);
+    function(err,newpost){
+      res.json(newpost);
     });
 /*var id = req.params.id;
   if (id >= 0 && id < data.posts.length) {

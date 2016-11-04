@@ -8,12 +8,12 @@ angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives'])
         templateUrl: 'partials/index',
         controller: IndexCtrl
       }).
-      when('/addPost', {
-        templateUrl: 'partials/addPost',
+      when('/UCSD', {
+        templateUrl: 'partials/UCSD',
         controller: AddPostCtrl
       }).
-      when('/addPost/:id', {
-        templateUrl: 'partials/readPost',
+      when('/UCSD/:id', {
+        templateUrl: 'partials/genericclasspage',
         controller: ReadPostCtrl
       }).
       when('/editPost/:id', {
