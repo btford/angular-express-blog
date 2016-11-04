@@ -55,4 +55,4 @@ app.get('*', routes.index);
 
 app.listen(PORT, function(){
 	console.log("listening on port");
-};
+});
