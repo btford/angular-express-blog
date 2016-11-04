@@ -9,7 +9,7 @@ function IndexCtrl($scope, $http) {
     });
 };
 
-function AddPostCtrl($scope, $http, $location) {
+function UcsdCtrl($scope, $http, $location) {
   //$scope.form = {};
     console.log("Inside controller");
     $http.get('/api/post').
@@ -20,25 +20,29 @@ function AddPostCtrl($scope, $http, $location) {
       });
   };
 
-function ReadPostCtrl($scope, $http, $routeParams, $route) {
+function CourseCtrl($scope, $http, $routeParams, $route) {
   console.log("Inside controller #2");
   console.log($routeParams.id);
   $http.get('/api/' + $routeParams.id).
     success(function(data) {
       console.log("Success");
       console.log(data);
-      $scope.courseabbreviation = data['course_abbreviation'];
-      $scope.allpostsonpage = data['posts'];
+      $scope.courseAbbreviation = data['course_abbreviation'];
+      $scope.postList = data['posts'];
     });
 
-  console.log($scope.commenttext);
-  $scope.makeapost = function(){
-    $http.put('/api/post/' + $routeParams.id + '/' + $scope.commenttext).
-    success(function(data) {
-      console.log("route.reloading()");
-      console.log(data);
-      $route.reload();
-    });
+  console.log($scope.commentText);
+  $scope.makePost = function(){
+    if ($scope.commentText && $scope.commentText.trim()) {
+      $http.put('/api/post/' + $routeParams.id + '/' + $scope.commentText).
+      success(function(data) {
+        console.log("route.reloading()");
+        console.log(data);
+        $route.reload();
+      });
+    } else {
+      console.log('Please enter comment')
+    }
   };
 }
 

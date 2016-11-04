@@ -10,11 +10,11 @@ angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives'])
       }).
       when('/UCSD', {
         templateUrl: 'partials/UCSD',
-        controller: AddPostCtrl
+        controller: UcsdCtrl
       }).
       when('/UCSD/:id', {
-        templateUrl: 'partials/genericclasspage',
-        controller: ReadPostCtrl
+        templateUrl: 'partials/course',
+        controller: CourseCtrl
       }).
       when('/editPost/:id', {
         templateUrl: 'partials/editPost',
