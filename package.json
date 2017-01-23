@@ -1,24 +1,10 @@
 {
-  "name": "myblog",
+  "name": "application-name",
   "version": "1.0.0",
-  "description": "my first blog",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/chroslen/myblog.git"
-  },
-  "keywords": [
-    "blog"
-  ],
-  "author": "chroslen",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/chroslen/myblog/issues"
-  },
-  "homepage": "https://github.com/chroslen/myblog#readme",
   "dependencies": {
     "angularjs": "0.0.1",
     "body-parser": "^1.16.0",
