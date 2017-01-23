@@ -1,9 +1,22 @@
 {
-    "name": "application-name"
-  , "version": "0.0.1"
-  , "private": true
-  , "dependencies": {
-      "express": "2.5.10"
-    , "jade": ">= 0.0.1"
+  "name": "application-name",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "angularjs": "0.0.1",
+    "body-parser": "^1.16.0",
+    "connect": "^3.5.0",
+    "errorhandler": "^1.5.0",
+    "express": "^4.14.0",
+    "express-session": "^1.15.0",
+    "jade": "^1.11.0",
+    "method-override": "^2.3.7",
+    "morgan": "^1.7.0",
+    "multer": "^1.2.1",
+    "pug": "^2.0.0-beta6",
+    "serve-favicon": "^2.3.2"
   }
 }
